@@ -3,6 +3,8 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using RestService.Models;
 using RestService.Data;
+using RestService.Helpers;
+
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -73,13 +75,15 @@ namespace RestService.Controllers
         [HttpGet("login/{userEmail}/{userPassword}")]
         public IActionResult Login(string userEmail, string userPassword)
         {
-            // Simple check
             var user = DataStore.Users.FirstOrDefault(u => u.UserEmail == userEmail && u.UserPassword == userPassword);
             if (user == null) return Unauthorized();
 
-            // Return a dummy token
-            var token = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
-            return Ok(token);
+            // Use TokenHelper to generate the encrypted token
+            var token = TokenHelper.GetToken(userEmail, userPassword);
+            if (string.IsNullOrEmpty(token)) return Unauthorized();
+
+            return Ok(new { Token = token });
         }
+
     }
 }
