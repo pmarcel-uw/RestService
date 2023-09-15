@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace rest_service_project.Models
+namespace RestService.Models
 {
     public class User
     {

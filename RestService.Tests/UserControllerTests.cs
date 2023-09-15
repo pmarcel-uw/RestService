@@ -1,12 +1,12 @@
 using NUnit.Framework;
-using rest_service_project.Controllers;
-using rest_service_project.Data;
-using rest_service_project.Models;
+using RestService.Controllers;
+using RestService.Data;
+using RestService.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 
-namespace rest_service_project_tests
+namespace RestService_tests
 {
     public class UserControllerTests
     {

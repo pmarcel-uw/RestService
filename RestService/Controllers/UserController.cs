@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using rest_service_project.Models;
-using rest_service_project.Data;
+using RestService.Models;
+using RestService.Data;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace rest_service_project.Controllers
+namespace RestService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -73,11 +73,11 @@ namespace rest_service_project.Controllers
         [HttpGet("login/{userEmail}/{userPassword}")]
         public IActionResult Login(string userEmail, string userPassword)
         {
-            // Simple check, in real life, use hash comparison and stronger checks
+            // Simple check
             var user = DataStore.Users.FirstOrDefault(u => u.UserEmail == userEmail && u.UserPassword == userPassword);
             if (user == null) return Unauthorized();
 
-            // Return a dummy token. In real life, generate JWT or similar token.
+            // Return a dummy token
             var token = Convert.ToBase64String(Guid.NewGuid().ToByteArray());
             return Ok(token);
         }
