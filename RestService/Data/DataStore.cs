@@ -1,7 +1,7 @@
-﻿using rest_service_project.Models;
+﻿using RestService.Models;
 using System.Collections.Generic;
 
-namespace rest_service_project.Data
+namespace RestService.Data
 {
     public static class DataStore
     {
