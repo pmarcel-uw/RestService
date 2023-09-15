@@ -12,10 +12,10 @@ namespace RestService.Helpers
     {
         public static string GetToken(string userEmail, string userPassword)
         {
-            // Check user's email and password against your DataStore.
+            // Check user's email and password against DataStore.
             var user = DataStore.Users.FirstOrDefault(u => u.UserEmail == userEmail && u.UserPassword == userPassword);
             if (user == null)
-                return null; // or throw an exception based on your requirements
+                return null;
 
             var token = new Token
             {
