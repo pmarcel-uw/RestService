@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "43d35e9a-b1b3-4593-835f-995b4427371f",
+		"name": "REST Service Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21538760"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{UserService}}/api/User",
+					"protocol": "http",
+					"host": [
+						"{{UserService}}"
+					],
+					"path": [
+						"api",
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{UserService}}/api/User/258c2db9-7aee-4db0-ac57-f2dbe230865b",
+					"protocol": "http",
+					"host": [
+						"{{UserService}}"
+					],
+					"path": [
+						"api",
+						"User",
+						"258c2db9-7aee-4db0-ac57-f2dbe230865b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"userEmail\": \"string\",\r\n  \"userPassword\": \"string\",\r\n  \"createdDate\": \"2023-08-06T13:35:07.478Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{UserService}}/api/User",
+					"protocol": "http",
+					"host": [
+						"{{UserService}}"
+					],
+					"path": [
+						"api",
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"3fa85f64-5717-4562-b3fc-2c963f66afa6\",\r\n  \"userEmail\": \"MyName\",\r\n  \"userPassword\": \"string\",\r\n  \"createdDate\": \"2023-08-06T13:38:24.363Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{UserService}}/api/User/31c6977c-465b-4d0d-97cc-1ac7c8258c23",
+					"protocol": "http",
+					"host": [
+						"{{UserService}}"
+					],
+					"path": [
+						"api",
+						"User",
+						"31c6977c-465b-4d0d-97cc-1ac7c8258c23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{UserService}}/api/User/31c6977c-465b-4d0d-97cc-1ac7c8258c23",
+					"protocol": "http",
+					"host": [
+						"{{UserService}}"
+					],
+					"path": [
+						"api",
+						"User",
+						"31c6977c-465b-4d0d-97cc-1ac7c8258c23"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{UserService}}/api/User/login/string/string",
+					"protocol": "http",
+					"host": [
+						"{{UserService}}"
+					],
+					"path": [
+						"api",
+						"User",
+						"login",
+						"string",
+						"string"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
